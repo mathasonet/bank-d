@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Yqd-mZ-tx2">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FiraSans-Light.otf">
+            <string>FiraSans-Light</string>
+            <string>FiraSans-Light</string>
+            <string>FiraSans-Light</string>
+        </mutableArray>
+        <mutableArray key="FiraSans-LightItalic.otf">
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+            <string>FiraSans-LightItalic</string>
+        </mutableArray>
+        <mutableArray key="FiraSans-Regular.otf">
+            <string>FiraSans-Regular</string>
+            <string>FiraSans-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--VC-->
+        <scene sceneID="aeG-vO-zJI">
+            <objects>
+                <viewController id="Yqd-mZ-tx2" customClass="VC" customModule="Bank_d" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IVY-6f-ioe"/>
+                        <viewControllerLayoutGuide type="bottom" id="cKk-DK-hNl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iQr-LO-RqV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCp-Gb-bSF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank'd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deq-Qx-jvU">
+                                        <rect key="frame" x="245" y="31" width="111" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="111" id="HC6-93-93e"/>
+                                            <constraint firstAttribute="height" constant="21" id="YZl-WA-N5G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2E-JE-z9a">
+                                        <rect key="frame" x="8" y="31" width="49" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="9P5-zZ-gec"/>
+                                            <constraint firstAttribute="width" constant="49" id="tg4-wE-6PQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="15"/>
+                                        <state key="normal" title="History">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76862745099999996" green="0.86274509799999999" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Deq-Qx-jvU" secondAttribute="bottom" constant="8" id="I4P-GR-QQd"/>
+                                    <constraint firstAttribute="height" constant="60" id="MGD-DP-8b1"/>
+                                    <constraint firstItem="Deq-Qx-jvU" firstAttribute="centerX" secondItem="DCp-Gb-bSF" secondAttribute="centerX" id="YJw-eD-yqP"/>
+                                    <constraint firstAttribute="bottom" secondItem="X2E-JE-z9a" secondAttribute="bottom" constant="8" id="Ytq-tS-551"/>
+                                    <constraint firstItem="X2E-JE-z9a" firstAttribute="leading" secondItem="DCp-Gb-bSF" secondAttribute="leading" constant="8" id="iwb-IL-nob"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TdA-l3-jGj">
+                                <rect key="frame" x="20" y="84" width="85" height="22"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Banknotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C00-0j-APe">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="22"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hAt-mG-GCr">
+                                <rect key="frame" x="20" y="154" width="64" height="22"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Coinage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mf-iF-Uij">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="22"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXo-zK-b2G">
+                                <rect key="frame" x="20" y="113" width="154" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHz-no-6Xw">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-G6-0oO">
+                                        <rect key="frame" x="33" y="0.0" width="25" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbU-QV-G4r">
+                                        <rect key="frame" x="58" y="0.0" width="25" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkH-zY-mIc">
+                                        <rect key="frame" x="83" y="0.0" width="24" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evm-PA-ALg">
+                                        <rect key="frame" x="106" y="0.0" width="17" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOb-aH-Pro">
+                                        <rect key="frame" x="123" y="0.0" width="16" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abN-62-0XY">
+                                        <rect key="frame" x="139" y="0.0" width="15" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVf-qd-Yl9">
+                                <rect key="frame" x="20" y="184" width="100" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="50¢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn4-IT-5gc">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="25¢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJI-hR-0xp">
+                                        <rect key="frame" x="24" y="0.0" width="23" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="10¢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T79-UQ-y9N">
+                                        <rect key="frame" x="47" y="0.0" width="23" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="5¢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PD-sT-4oG">
+                                        <rect key="frame" x="70" y="0.0" width="16" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1¢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-F9-XCd">
+                                        <rect key="frame" x="86" y="0.0" width="15" height="20"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KVT-tq-rsI">
+                                <rect key="frame" x="38" y="229" width="39" height="30"/>
+                                <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DCp-Gb-bSF" secondAttribute="trailing" id="ZAk-p9-BKM"/>
+                            <constraint firstItem="DCp-Gb-bSF" firstAttribute="top" secondItem="iQr-LO-RqV" secondAttribute="top" id="deM-tU-VB8"/>
+                            <constraint firstItem="DCp-Gb-bSF" firstAttribute="leading" secondItem="iQr-LO-RqV" secondAttribute="leading" id="dz9-cQ-oDB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BPH-8F-4uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="-165"/>
+        </scene>
+    </scenes>
+</document>
