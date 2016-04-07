@@ -99,9 +99,9 @@
 		AFB7BB361CB0DA9C007D69FC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AFB7BB2D1CB0D8F3007D69FC /* LaunchScreen.storyboard */,
-				AFB7BB281CB0D8F3007D69FC /* Main.storyboard */,
 				AF230FC71CB126BF00DDF5BE /* BankCell.swift */,
+				AFB7BB281CB0D8F3007D69FC /* Main.storyboard */,
+				AFB7BB2D1CB0D8F3007D69FC /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";

@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FiraSans-Regular.otf">
+            <string>FiraSans-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -16,7 +21,35 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-GA-4rr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank'd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZx-Pf-IXu">
+                                        <rect key="frame" x="235" y="268" width="130" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="Phc-uc-aS9"/>
+                                            <constraint firstAttribute="height" constant="63" id="TIA-Zd-ub6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="40"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76862745099999996" green="0.86274509799999999" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="uZx-Pf-IXu" firstAttribute="centerX" secondItem="kUG-GA-4rr" secondAttribute="centerX" id="8qJ-ct-67n"/>
+                                    <constraint firstItem="uZx-Pf-IXu" firstAttribute="centerY" secondItem="kUG-GA-4rr" secondAttribute="centerY" id="GYX-7U-f3U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kUG-GA-4rr" secondAttribute="trailing" id="29x-ab-Gfg"/>
+                            <constraint firstItem="kUG-GA-4rr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Qkk-uv-8MP"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="kUG-GA-4rr" secondAttribute="bottom" id="Zdq-CA-pbk"/>
+                            <constraint firstItem="kUG-GA-4rr" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ogW-PL-S83"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
