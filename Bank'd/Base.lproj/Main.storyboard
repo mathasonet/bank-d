@@ -46,7 +46,6 @@
             <string>FiraSans-Regular</string>
             <string>FiraSans-Regular</string>
             <string>FiraSans-Regular</string>
-            <string>FiraSans-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -124,7 +123,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="EZ6-da-Ial"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OXo-zK-b2G" userLabel="BanknotesAmtLbl">
@@ -234,7 +233,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="Wxn-vk-Kde"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="sVf-qd-Yl9" userLabel="CoinageAmtLbl">
@@ -322,7 +321,7 @@
                                     <constraint firstAttribute="height" constant="30" id="UbV-BC-S5S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kg4-Y4-Zwh">
@@ -332,7 +331,7 @@
                                     <constraint firstAttribute="width" constant="63" id="fYL-Vv-rHK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing to calculate!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7Y-PN-DZx">
@@ -343,7 +342,7 @@
                                     <constraint firstAttribute="width" constant="242" id="zY4-U5-dOh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -394,16 +393,6 @@
                         <outlet property="twoDollarFld" destination="MHr-vP-acK" id="o9m-dO-Om1"/>
                     </connections>
                 </viewController>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,000.47" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-53-faM">
-                    <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="110" id="VKH-re-e2X"/>
-                        <constraint firstAttribute="height" constant="30" id="kzS-i3-Pag"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="25"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPH-8F-4uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="230" y="-165"/>
@@ -471,7 +460,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFi-8c-uXk">
                                                     <rect key="frame" x="8" y="13" width="507" height="30"/>
                                                     <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -495,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mZ-1T-B9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="-158"/>
+            <point key="canvasLocation" x="981" y="-335"/>
         </scene>
     </scenes>
 </document>
