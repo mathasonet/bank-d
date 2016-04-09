@@ -25,7 +25,8 @@ class VC: UIViewController, UITextFieldDelegate {
   var coinBank = [CoinOfType:Int?]()
   var bank: Bank?
   
-  let numberToolbar: UIToolbar = UIToolbar()
+  // let numberToolbar: UIToolbar = UIToolbar()
+  
   // MARK: Properties, Computed
   
   
