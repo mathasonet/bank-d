@@ -15,28 +15,17 @@ class VC: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var bankLbl: UILabel!
   @IBOutlet weak var bankAmtLbl: UILabel!
   
+  @IBOutlet var dollarFlds: [UITextField]!
+  @IBOutlet var centFlds: [UITextField]!
+  
+  // MARK: Properties, Stored
+  let formatter = NSNumberFormatter()
+  
   var dollarBank = [DollarOfType:Int?]()
   var coinBank = [CoinOfType:Int?]()
   var bank: Bank?
   
   let numberToolbar: UIToolbar = UIToolbar()
-  
-  @IBOutlet weak var hundredDollarFld: UITextField!
-  @IBOutlet weak var fiftyDollarFld: UITextField!
-  @IBOutlet weak var twentyDollarFld: UITextField!
-  @IBOutlet weak var tenDollarFld: UITextField!
-  @IBOutlet weak var fiveDollarFld: UITextField!
-  @IBOutlet weak var twoDollarFld: UITextField!
-  @IBOutlet weak var oneDollarFld: UITextField!
-  
-  @IBOutlet weak var fiftyCentFld: UITextField!
-  @IBOutlet weak var quarterCentFld: UITextField!
-  @IBOutlet weak var dimeCentFld: UITextField!
-  @IBOutlet weak var nickleCentFld: UITextField!
-  @IBOutlet weak var pennyCentFld: UITextField!
-  
-  // MARK: Properties, Stored
-  let formatter = NSNumberFormatter()
   // MARK: Properties, Computed
   
   
@@ -67,6 +56,15 @@ class VC: UIViewController, UITextFieldDelegate {
     nickleCentFld.inputAccessoryView = numberToolbar
     pennyCentFld.inputAccessoryView = numberToolbar
     */
+    
+    for dollar in dollarFlds {
+      dollar.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
+    }
+    
+    for cent in centFlds {
+      cent.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
+    }
+    /*
     hundredDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
     fiftyDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
     twentyDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
@@ -80,6 +78,7 @@ class VC: UIViewController, UITextFieldDelegate {
     dimeCentFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
     nickleCentFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
     pennyCentFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
+    */
     
     let tapRecognizer = UITapGestureRecognizer()
     tapRecognizer.addTarget(self, action: #selector(VC.didTapView))
@@ -87,19 +86,14 @@ class VC: UIViewController, UITextFieldDelegate {
   }
   
   func didTapView() {
-    hundredDollarFld.resignFirstResponder()
-    fiftyDollarFld.resignFirstResponder()
-    twentyDollarFld.resignFirstResponder()
-    tenDollarFld.resignFirstResponder()
-    fiveDollarFld.resignFirstResponder()
-    twoDollarFld.resignFirstResponder()
-    oneDollarFld.resignFirstResponder()
     
-    fiftyCentFld.resignFirstResponder()
-    quarterCentFld.resignFirstResponder()
-    dimeCentFld.resignFirstResponder()
-    nickleCentFld.resignFirstResponder()
-    pennyCentFld.resignFirstResponder()
+    for dollar in dollarFlds {
+      dollar.resignFirstResponder()
+    }
+    
+    for cent in centFlds {
+      cent.resignFirstResponder()
+    }
   }
   
   // MARK: IBActions
@@ -120,74 +114,74 @@ class VC: UIViewController, UITextFieldDelegate {
   */
   func checkFieldValues() {
     
-    if let hundredsValue = Int(hundredDollarFld.text!) {
+    if let hundredsValue = Int(dollarFlds[0].text!) {
       dollarBank[.Hundred] = hundredsValue
     } else {
       dollarBank[.Hundred] = 0
     }
     
-    if let fiftysValue = Int(fiftyDollarFld.text!) {
+    if let fiftysValue = Int(dollarFlds[1].text!) {
       dollarBank[.Fifty] = fiftysValue
     } else {
       dollarBank[.Fifty] = 0
     }
     
-    if let twentysValue = Int(twentyDollarFld.text!) {
+    if let twentysValue = Int(dollarFlds[2].text!) {
       dollarBank[.Twenty] = twentysValue
     } else {
       dollarBank[.Twenty] = 0
     }
     
-    if let tensValue = Int(tenDollarFld.text!) {
+    if let tensValue = Int(dollarFlds[3].text!) {
       dollarBank[.Ten] = tensValue
     } else {
       dollarBank[.Ten] = 0
     }
     
-    if let fivesValue = Int(fiveDollarFld.text!) {
+    if let fivesValue = Int(dollarFlds[4].text!) {
       dollarBank[.Five] = fivesValue
     } else {
       dollarBank[.Five] = 0
     }
     
-    if let twosValue = Int(twoDollarFld.text!) {
+    if let twosValue = Int(dollarFlds[5].text!) {
       dollarBank[.Two] = twosValue
     } else {
       dollarBank[.Two] = 0
     }
     
-    if let onesValue = Int(oneDollarFld.text!) {
+    if let onesValue = Int(dollarFlds[6].text!) {
       dollarBank[.One] = onesValue
     } else {
       dollarBank[.One] = 0
     }
     
     
-    if let fiftyValue = Int(fiftyCentFld.text!) {
+    if let fiftyValue = Int(centFlds[0].text!) {
       coinBank[.Fifty] = fiftyValue
     } else {
       coinBank[.Fifty] = 0
     }
     
-    if let quarterValue = Int(quarterCentFld.text!) {
+    if let quarterValue = Int(centFlds[1].text!) {
       coinBank[.Quarter] = quarterValue
     } else {
       coinBank[.Quarter] = 0
     }
     
-    if let dimeValue = Int(dimeCentFld.text!) {
+    if let dimeValue = Int(centFlds[2].text!) {
       coinBank[.Dime] = dimeValue
     } else {
       coinBank[.Dime] = 0
     }
     
-    if let nickleValue = Int(nickleCentFld.text!) {
+    if let nickleValue = Int(centFlds[3].text!) {
       coinBank[.Nickle] = nickleValue
     } else {
       coinBank[.Nickle] = 0
     }
     
-    if let pennyValue = Int(pennyCentFld.text!) {
+    if let pennyValue = Int(centFlds[4].text!) {
       coinBank[.Penny] = pennyValue
     } else {
       coinBank[.Penny] = 0
@@ -206,7 +200,6 @@ class VC: UIViewController, UITextFieldDelegate {
       bankLbl.hidden = false
       bankAmtLbl.hidden = false
       
-      print(bank?.totalAmount())
       if let stringAmount = bank?.totalAmount(), let printAmount = formatter.stringFromNumber(stringAmount) {
         bankAmtLbl.text = "\(printAmount)"
       }

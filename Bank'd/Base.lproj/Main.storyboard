@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Yqd-mZ-tx2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F18c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Yqd-mZ-tx2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -378,19 +378,19 @@
                     <connections>
                         <outlet property="bankAmtLbl" destination="SYh-o6-quS" id="fZX-KT-eee"/>
                         <outlet property="bankLbl" destination="kg4-Y4-Zwh" id="92M-ns-u3N"/>
-                        <outlet property="dimeCentFld" destination="QzP-yn-bMR" id="wbv-EN-Xu0"/>
                         <outlet property="emptyLbl" destination="Z7Y-PN-DZx" id="jJ4-TC-ywC"/>
-                        <outlet property="fiftyCentFld" destination="LOP-Ao-Fjp" id="SPD-Hs-rTh"/>
-                        <outlet property="fiftyDollarFld" destination="yLf-fO-k0B" id="KYI-bW-roe"/>
-                        <outlet property="fiveDollarFld" destination="M82-Gr-CnH" id="XsD-BV-j0S"/>
-                        <outlet property="hundredDollarFld" destination="KVT-tq-rsI" id="k4a-fE-spE"/>
-                        <outlet property="nickleCentFld" destination="yds-vx-XXc" id="elv-sM-lta"/>
-                        <outlet property="oneDollarFld" destination="g1I-tV-rgy" id="BmG-dv-UXp"/>
-                        <outlet property="pennyCentFld" destination="Gz0-fF-SB4" id="m1Y-fo-oto"/>
-                        <outlet property="quarterCentFld" destination="Ek2-jP-lhk" id="8kZ-LZ-5Qm"/>
-                        <outlet property="tenDollarFld" destination="Fb0-qK-7vg" id="2Ba-Os-TD1"/>
-                        <outlet property="twentyDollarFld" destination="wvw-SX-5p3" id="jXG-p0-Mzl"/>
-                        <outlet property="twoDollarFld" destination="MHr-vP-acK" id="o9m-dO-Om1"/>
+                        <outletCollection property="dollarFlds" destination="KVT-tq-rsI" collectionClass="NSMutableArray" id="o42-Ji-R0l"/>
+                        <outletCollection property="dollarFlds" destination="yLf-fO-k0B" collectionClass="NSMutableArray" id="pBq-3J-8ev"/>
+                        <outletCollection property="dollarFlds" destination="wvw-SX-5p3" collectionClass="NSMutableArray" id="FP3-g5-cfU"/>
+                        <outletCollection property="dollarFlds" destination="Fb0-qK-7vg" collectionClass="NSMutableArray" id="SC3-n0-jhc"/>
+                        <outletCollection property="dollarFlds" destination="M82-Gr-CnH" collectionClass="NSMutableArray" id="g8V-UW-v2q"/>
+                        <outletCollection property="dollarFlds" destination="MHr-vP-acK" collectionClass="NSMutableArray" id="Ywn-Gi-3Yz"/>
+                        <outletCollection property="dollarFlds" destination="g1I-tV-rgy" collectionClass="NSMutableArray" id="Ehp-16-fw9"/>
+                        <outletCollection property="centFlds" destination="LOP-Ao-Fjp" collectionClass="NSMutableArray" id="lxX-km-Xce"/>
+                        <outletCollection property="centFlds" destination="Ek2-jP-lhk" collectionClass="NSMutableArray" id="kcT-ta-a1a"/>
+                        <outletCollection property="centFlds" destination="QzP-yn-bMR" collectionClass="NSMutableArray" id="hXJ-6H-aWB"/>
+                        <outletCollection property="centFlds" destination="yds-vx-XXc" collectionClass="NSMutableArray" id="0kf-Au-Lc1"/>
+                        <outletCollection property="centFlds" destination="Gz0-fF-SB4" collectionClass="NSMutableArray" id="bXo-bw-WwA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPH-8F-4uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
