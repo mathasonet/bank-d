@@ -99,6 +99,21 @@ class VC: UIViewController, UITextFieldDelegate {
   
   // MARK: IBActions
   
+  @IBAction func onClearPressed(sender: UIButton) {
+    
+    for dollar in dollarFlds {
+      dollar.text = ""
+    }
+    
+    for cent in centFlds {
+      cent.text = ""
+    }
+    
+    changeLabel()
+    didTapView()
+  }
+  
+  
   // MARK: Functions, Interface
   /*
   func closeToolbar() {
