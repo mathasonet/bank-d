@@ -13,6 +13,7 @@
             <string>FiraSans-Light</string>
             <string>FiraSans-Light</string>
             <string>FiraSans-Light</string>
+            <string>FiraSans-Light</string>
         </mutableArray>
         <mutableArray key="FiraSans-LightItalic.otf">
             <string>FiraSans-LightItalic</string>
@@ -99,8 +100,9 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-KN-TsJ">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-KN-TsJ">
                                         <rect key="frame" x="8" y="31" width="46" height="21"/>
+                                        <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="15"/>
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
