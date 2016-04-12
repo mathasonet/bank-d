@@ -100,8 +100,12 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-KN-TsJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-KN-TsJ">
                                         <rect key="frame" x="8" y="31" width="46" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="WcQ-Hu-XYD"/>
+                                            <constraint firstAttribute="width" constant="46" id="ygA-xd-lsD"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="15"/>
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,11 +119,13 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="xia-d8-KGf" secondAttribute="trailing" constant="8" id="6eE-dA-kYY"/>
                                     <constraint firstAttribute="bottom" secondItem="xia-d8-KGf" secondAttribute="bottom" constant="8" id="80r-Nc-Mdb"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Vg-KN-TsJ" secondAttribute="bottom" constant="8" id="Dmn-np-O4D"/>
                                     <constraint firstAttribute="bottom" secondItem="Deq-Qx-jvU" secondAttribute="bottom" constant="8" id="I4P-GR-QQd"/>
                                     <constraint firstAttribute="height" constant="60" id="MGD-DP-8b1"/>
                                     <constraint firstItem="Deq-Qx-jvU" firstAttribute="centerX" secondItem="DCp-Gb-bSF" secondAttribute="centerX" id="YJw-eD-yqP"/>
                                     <constraint firstAttribute="bottom" secondItem="X2E-JE-z9a" secondAttribute="bottom" constant="8" id="Ytq-tS-551"/>
                                     <constraint firstItem="X2E-JE-z9a" firstAttribute="leading" secondItem="DCp-Gb-bSF" secondAttribute="leading" constant="8" id="iwb-IL-nob"/>
+                                    <constraint firstItem="4Vg-KN-TsJ" firstAttribute="leading" secondItem="DCp-Gb-bSF" secondAttribute="leading" constant="8" id="lik-oJ-aa5"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banknotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C00-0j-APe" userLabel="BanknotesHeader">
