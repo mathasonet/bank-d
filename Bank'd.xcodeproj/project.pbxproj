@@ -11,7 +11,7 @@
 		AF230FC51CB0F96600DDF5BE /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF230FC41CB0F96600DDF5BE /* Bank.swift */; };
 		AF230FC81CB126BF00DDF5BE /* BankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF230FC71CB126BF00DDF5BE /* BankCell.swift */; };
 		AF55B8FA1CBDAC3000A41128 /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF55B8F91CBDAC3000A41128 /* CurrencyField.swift */; };
-		AF55B8FD1CBDB84900A41128 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AF55B8FC1CBDB84900A41128 /* README.md */; };
+		AF55B8FF1CBDB91500A41128 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AF55B8FE1CBDB91500A41128 /* README.md */; };
 		AFB7BB231CB0D8F3007D69FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7BB221CB0D8F3007D69FC /* AppDelegate.swift */; };
 		AFB7BB2A1CB0D8F3007D69FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB7BB281CB0D8F3007D69FC /* Main.storyboard */; };
 		AFB7BB2C1CB0D8F3007D69FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB7BB2B1CB0D8F3007D69FC /* Assets.xcassets */; };
@@ -28,7 +28,7 @@
 		AF230FC41CB0F96600DDF5BE /* Bank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		AF230FC71CB126BF00DDF5BE /* BankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankCell.swift; sourceTree = "<group>"; };
 		AF55B8F91CBDAC3000A41128 /* CurrencyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
-		AF55B8FC1CBDB84900A41128 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AF55B8FE1CBDB91500A41128 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		AFB7BB1F1CB0D8F3007D69FC /* Bank'd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bank'd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB7BB221CB0D8F3007D69FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFB7BB291CB0D8F3007D69FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		AF55B8FB1CBDB36500A41128 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				AF55B8FC1CBDB84900A41128 /* README.md */,
+				AF55B8FE1CBDB91500A41128 /* README.md */,
 				AFB7BB221CB0D8F3007D69FC /* AppDelegate.swift */,
 				AFB7BB2B1CB0D8F3007D69FC /* Assets.xcassets */,
 				AFB7BB301CB0D8F3007D69FC /* Info.plist */,
@@ -219,7 +219,7 @@
 				AF230FC51CB0F96600DDF5BE /* Bank.swift in Sources */,
 				AFB7BB381CB0DAB3007D69FC /* VC.swift in Sources */,
 				AF230FC81CB126BF00DDF5BE /* BankCell.swift in Sources */,
-				AF55B8FD1CBDB84900A41128 /* README.md in Sources */,
+				AF55B8FF1CBDB91500A41128 /* README.md in Sources */,
 				AF55B8FA1CBDAC3000A41128 /* CurrencyField.swift in Sources */,
 				AF230FC21CB0F7C700DDF5BE /* HistoryVC.swift in Sources */,
 				AFB7BB231CB0D8F3007D69FC /* AppDelegate.swift in Sources */,
