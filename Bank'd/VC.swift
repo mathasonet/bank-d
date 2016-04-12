@@ -25,38 +25,12 @@ class VC: UIViewController, UITextFieldDelegate {
   var coinBank = [CoinOfType:Int?]()
   var bank: Bank?
   
-  // let numberToolbar: UIToolbar = UIToolbar()
-  
   // MARK: Properties, Computed
   
   
   // MARK: Functions, Setup
   override func viewDidLoad() {
     super.viewDidLoad()
-    /*
-    numberToolbar.barStyle = UIBarStyle.Default
-    numberToolbar.items=[
-      UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(VC.textFieldShouldReturn(_:))),
-      UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil),
-      UIBarButtonItem(title: "Apply", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(VC.closeToolbar))
-    ]
-    
-    numberToolbar.sizeToFit()
-    
-    hundredDollarFld.inputAccessoryView = numberToolbar
-    fiftyDollarFld.inputAccessoryView = numberToolbar
-    twentyDollarFld.inputAccessoryView = numberToolbar
-    tenDollarFld.inputAccessoryView = numberToolbar
-    fiveDollarFld.inputAccessoryView = numberToolbar
-    twoDollarFld.inputAccessoryView = numberToolbar
-    oneDollarFld.inputAccessoryView = numberToolbar
-    
-    fiftyCentFld.inputAccessoryView = numberToolbar
-    quarterCentFld.inputAccessoryView = numberToolbar
-    dimeCentFld.inputAccessoryView = numberToolbar
-    nickleCentFld.inputAccessoryView = numberToolbar
-    pennyCentFld.inputAccessoryView = numberToolbar
-    */
     
     for dollar in dollarFlds {
       dollar.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
@@ -65,21 +39,6 @@ class VC: UIViewController, UITextFieldDelegate {
     for cent in centFlds {
       cent.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
     }
-    /*
-    hundredDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    fiftyDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    twentyDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    tenDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    fiveDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    twoDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    oneDollarFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    
-    fiftyCentFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    quarterCentFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    dimeCentFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    nickleCentFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    pennyCentFld.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
-    */
     
     let tapRecognizer = UITapGestureRecognizer()
     tapRecognizer.addTarget(self, action: #selector(VC.didTapView))
@@ -115,19 +74,7 @@ class VC: UIViewController, UITextFieldDelegate {
   
   
   // MARK: Functions, Interface
-  /*
-  func closeToolbar() {
-    self.resignFirstResponder()
-  }
-  
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
-    if textField == hundredDollarFld {
-      textField.resignFirstResponder()
-      fiftyDollarFld.becomeFirstResponder()
-    }
-    return true
-  }
-  */
+
   func checkFieldValues() {
     
     if let hundredsValue = Int(dollarFlds[0].text!) {
