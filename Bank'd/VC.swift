@@ -15,8 +15,8 @@ class VC: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var bankLbl: UILabel!
   @IBOutlet weak var bankAmtLbl: UILabel!
   
-  @IBOutlet var dollarFlds: [UITextField]!
-  @IBOutlet var centFlds: [UITextField]!
+  @IBOutlet var dollarFlds: [CurrencyField]!
+  @IBOutlet var centFlds: [CurrencyField]!
   
   // MARK: Properties, Stored
   let formatter = NSNumberFormatter()
@@ -43,6 +43,7 @@ class VC: UIViewController, UITextFieldDelegate {
     let tapRecognizer = UITapGestureRecognizer()
     tapRecognizer.addTarget(self, action: #selector(VC.didTapView))
     self.view.addGestureRecognizer(tapRecognizer)
+    _ = UIColor(red:0.768627, green:0.862745, blue:0.945098, alpha:1.0)
   }
   
   func didTapView() {
@@ -77,77 +78,48 @@ class VC: UIViewController, UITextFieldDelegate {
 
   func checkFieldValues() {
     
-    if let hundredsValue = Int(dollarFlds[0].text!) {
-      dollarBank[.Hundred] = hundredsValue
-    } else {
-      dollarBank[.Hundred] = 0
+    for field in dollarFlds {
+      
+      var keyVal: DollarOfType
+      
+      switch field.fieldID {
+      case "hundredDollar": keyVal = .Hundred
+      case "fiftyDollar": keyVal = .Fifty
+      case "twentyDollar": keyVal = .Twenty
+      case "tenDollar": keyVal = .Ten
+      case "fiveDollar": keyVal = .Five
+      case "twoDollar": keyVal = .Two
+      case "oneDollar": keyVal = .One
+      default: keyVal = .Empty
+      }
+      
+      if let fieldVal = Int(field.text!) {
+        dollarBank[keyVal] = fieldVal
+      } else {
+        dollarBank[keyVal] = 0
+      }
+      
     }
     
-    if let fiftysValue = Int(dollarFlds[1].text!) {
-      dollarBank[.Fifty] = fiftysValue
-    } else {
-      dollarBank[.Fifty] = 0
-    }
-    
-    if let twentysValue = Int(dollarFlds[2].text!) {
-      dollarBank[.Twenty] = twentysValue
-    } else {
-      dollarBank[.Twenty] = 0
-    }
-    
-    if let tensValue = Int(dollarFlds[3].text!) {
-      dollarBank[.Ten] = tensValue
-    } else {
-      dollarBank[.Ten] = 0
-    }
-    
-    if let fivesValue = Int(dollarFlds[4].text!) {
-      dollarBank[.Five] = fivesValue
-    } else {
-      dollarBank[.Five] = 0
-    }
-    
-    if let twosValue = Int(dollarFlds[5].text!) {
-      dollarBank[.Two] = twosValue
-    } else {
-      dollarBank[.Two] = 0
-    }
-    
-    if let onesValue = Int(dollarFlds[6].text!) {
-      dollarBank[.One] = onesValue
-    } else {
-      dollarBank[.One] = 0
-    }
-    
-    
-    if let fiftyValue = Int(centFlds[0].text!) {
-      coinBank[.Fifty] = fiftyValue
-    } else {
-      coinBank[.Fifty] = 0
-    }
-    
-    if let quarterValue = Int(centFlds[1].text!) {
-      coinBank[.Quarter] = quarterValue
-    } else {
-      coinBank[.Quarter] = 0
-    }
-    
-    if let dimeValue = Int(centFlds[2].text!) {
-      coinBank[.Dime] = dimeValue
-    } else {
-      coinBank[.Dime] = 0
-    }
-    
-    if let nickleValue = Int(centFlds[3].text!) {
-      coinBank[.Nickle] = nickleValue
-    } else {
-      coinBank[.Nickle] = 0
-    }
-    
-    if let pennyValue = Int(centFlds[4].text!) {
-      coinBank[.Penny] = pennyValue
-    } else {
-      coinBank[.Penny] = 0
+    for field in centFlds {
+      
+      var keyVal: CoinOfType
+      
+      switch field.fieldID {
+      case "fiftyCent": keyVal = .Fifty
+      case "quarterCent": keyVal = .Quarter
+      case "tenCent": keyVal = .Dime
+      case "fiveCent": keyVal = .Nickle
+      case "oneCent": keyVal = .Penny
+      default: keyVal = .Empty
+      }
+      
+      if let fieldVal = Int(field.text!) {
+        coinBank[keyVal] = fieldVal
+      } else {
+        coinBank[keyVal] = 0
+      }
+      
     }
     
     bank = Bank(dollarBank: dollarBank, coinBank: coinBank)

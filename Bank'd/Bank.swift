@@ -16,6 +16,7 @@ enum DollarOfType: Int {
   case Twenty = 20
   case Fifty = 50
   case Hundred = 100
+  case Empty = 0
 }
 
 enum CoinOfType: Double {
@@ -24,6 +25,7 @@ enum CoinOfType: Double {
   case Dime = 0.10
   case Quarter = 0.25
   case Fifty = 0.50
+  case Empty = 0.0
 }
 
 class Bank {
