@@ -68,6 +68,16 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		AF55B8FB1CBDB36500A41128 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AFB7BB221CB0D8F3007D69FC /* AppDelegate.swift */,
+				AFB7BB2B1CB0D8F3007D69FC /* Assets.xcassets */,
+				AFB7BB301CB0D8F3007D69FC /* Info.plist */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		AFB7BB161CB0D8F3007D69FC = {
 			isa = PBXGroup;
 			children = (
@@ -88,9 +98,7 @@
 		AFB7BB211CB0D8F3007D69FC /* Bank'd */ = {
 			isa = PBXGroup;
 			children = (
-				AFB7BB221CB0D8F3007D69FC /* AppDelegate.swift */,
-				AFB7BB2B1CB0D8F3007D69FC /* Assets.xcassets */,
-				AFB7BB301CB0D8F3007D69FC /* Info.plist */,
+				AF55B8FB1CBDB36500A41128 /* App */,
 				AF230FC31CB0F94E00DDF5BE /* Model */,
 				AFB7BB361CB0DA9C007D69FC /* View */,
 				AF230FC61CB1268300DDF5BE /* Controller */,
