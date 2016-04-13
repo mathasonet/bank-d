@@ -73,6 +73,7 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
     guard let buttonFont = UIFont(name: "FiraSans-Regular", size: 15) else {return}
     
     navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: titleFont]
+    //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: titleFont]
     UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: buttonFont], forState: .Normal)
     
   }
@@ -170,45 +171,56 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
       return
     }
     
-    for dollar in staffBank.dollarBank {
+    if staffBank.isNotEmpty() {
       
-      var keyVal = String()
-      
-      switch dollar.0 {
-      case .Hundred: keyVal = "dollarHundred"
-      case .Fifty: keyVal = "dollarFifty"
-      case .Twenty: keyVal = "dollarTwenty"
-      case .Ten: keyVal = "dollarTen"
-      case .Five: keyVal = "dollarFive"
-      case .Two: keyVal = "dollarTwo"
-      case .One: keyVal = "dollarOne"
-      }
-      
-      oneBank.setValue(dollar.1, forKey: keyVal)
+      for dollar in staffBank.dollarBank {
+        
+        var keyVal = String()
+        
+        switch dollar.0 {
+        case .Hundred: keyVal = "dollarHundred"
+        case .Fifty: keyVal = "dollarFifty"
+        case .Twenty: keyVal = "dollarTwenty"
+        case .Ten: keyVal = "dollarTen"
+        case .Five: keyVal = "dollarFive"
+        case .Two: keyVal = "dollarTwo"
+        case .One: keyVal = "dollarOne"
+        }
+        
+        oneBank.setValue(dollar.1, forKey: keyVal)
 
-    }
-    
-    for coin in staffBank.coinBank {
-      
-      var keyVal = String()
-      
-      switch coin.0 {
-      case .Fifty: keyVal = "coinFifty"
-      case .Quarter: keyVal = "coinQuarter"
-      case .Dime: keyVal = "coinDime"
-      case .Nickle: keyVal = "coinNickle"
-      case .Penny: keyVal = "coinPenny"
       }
       
-      oneBank.setValue(coin.1, forKey: keyVal)
+      for coin in staffBank.coinBank {
+        
+        var keyVal = String()
+        
+        switch coin.0 {
+        case .Fifty: keyVal = "coinFifty"
+        case .Quarter: keyVal = "coinQuarter"
+        case .Dime: keyVal = "coinDime"
+        case .Nickle: keyVal = "coinNickle"
+        case .Penny: keyVal = "coinPenny"
+        }
+        
+        oneBank.setValue(coin.1, forKey: keyVal)
+        
+      }
       
-    }
-    
-    do {
-      try managedContext.save()
-      banks.append(oneBank)
-    } catch let err as NSError {
-      print("Could not save \(err), \(err.userInfo)")
+      let alertController = UIAlertController(title: "Record Saved!", message: nil, preferredStyle: .Alert)
+      
+      let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+      
+      alertController.addAction(okAction)
+      self.didTapView()
+      
+      do {
+        try managedContext.save()
+        banks.append(oneBank)
+        self.presentViewController(alertController, animated: true) {}
+      } catch let err as NSError {
+        print("Could not save \(err), \(err.userInfo)")
+      }
     }
     
   }

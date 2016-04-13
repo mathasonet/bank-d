@@ -16,6 +16,8 @@ enum DollarOfType: Int {
   case Twenty = 20
   case Fifty = 50
   case Hundred = 100
+  
+  static let allValues = [One, Two, Five, Ten, Twenty, Fifty, Hundred]
 }
 
 enum CoinOfType: Double {
@@ -24,6 +26,8 @@ enum CoinOfType: Double {
   case Dime = 0.10
   case Quarter = 0.25
   case Fifty = 0.50
+  
+  static let allValues = [Penny, Nickle, Dime, Quarter, Fifty]
 }
 
 class StaffBank {
@@ -57,5 +61,13 @@ class StaffBank {
     }
     
     return totalBank
+  }
+  
+  func isNotEmpty() -> Bool {
+    if self.totalAmount() > 0.0 {
+      return true
+    } else {
+      return false
+    }
   }
 }

@@ -16,6 +16,7 @@ class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   var banks = [Bank]()
   
   let formatter = NSDateFormatter()
+  let numFormatter = NSNumberFormatter()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,12 +36,18 @@ class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let managedContext = appDelegate.managedObjectContext
     
     let fetchRequest = NSFetchRequest(entityName: "Bank")
+    let sort = NSSortDescriptor(key: "created", ascending: false)
+    fetchRequest.sortDescriptors = [sort]
     
     do {
       let results = try managedContext.executeFetchRequest(fetchRequest)
       banks = results as! [Bank]
     } catch let error as NSError {
       print("Could not fetch \(error), \(error.userInfo)")
+    }
+    
+    if let indexPath = self.tableView.indexPathForSelectedRow {
+      self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
   }
 
@@ -56,12 +63,16 @@ class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     if let cell = tableView.dequeueReusableCellWithIdentifier("BankCell") as? BankCell {
       let bank = banks[indexPath.row]
+      let amountVal = bank.staffBank.totalAmount()
       
       formatter.dateStyle = .LongStyle
       formatter.timeStyle = .MediumStyle
+      numFormatter.numberStyle = .CurrencyStyle
       
       if let dateVal = bank.created {
         cell.timestampLbl.text = formatter.stringFromDate(dateVal)
+        cell.amountLbl.text = numFormatter.stringFromNumber(amountVal)
+        
       }
       return cell
     } else {

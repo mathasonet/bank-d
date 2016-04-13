@@ -11,6 +11,7 @@ import UIKit
 class BankCell: UITableViewCell {
   
   @IBOutlet weak var timestampLbl: UILabel!
+  @IBOutlet weak var amountLbl: UILabel!
   
   var timeStamp: String {
     get {
