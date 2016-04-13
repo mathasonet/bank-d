@@ -8,12 +8,15 @@
 
 import UIKit
 
-class VC: UIViewController, UITextFieldDelegate {
+class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
   
   // MARK: IBOutlets
   @IBOutlet weak var emptyLbl: UILabel!
   @IBOutlet weak var bankLbl: UILabel!
   @IBOutlet weak var bankAmtLbl: UILabel!
+  
+  @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var contentView: UIView!
   
   @IBOutlet var dollarFlds: [CurrencyField]!
   @IBOutlet var centFlds: [CurrencyField]!
@@ -24,6 +27,8 @@ class VC: UIViewController, UITextFieldDelegate {
   var dollarBank = [DollarOfType:Int?]()
   var coinBank = [CoinOfType:Int?]()
   var bank: Bank?
+  
+  var statusBarHidden = false
   
   // MARK: Properties, Computed
   
@@ -44,6 +49,59 @@ class VC: UIViewController, UITextFieldDelegate {
     tapRecognizer.addTarget(self, action: #selector(VC.didTapView))
     self.view.addGestureRecognizer(tapRecognizer)
     _ = UIColor(red:0.768627, green:0.862745, blue:0.945098, alpha:1.0)
+    
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VC.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VC.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    
+    scrollView.delegate = self
+    
+    scrollView.keyboardDismissMode = .Interactive
+  }
+  
+  override func viewDidLayoutSubviews() {
+    scrollView.contentSize = contentView.frame.size
+  }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return statusBarHidden
+  }
+  
+  override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
+    return UIStatusBarAnimation.Slide
+  }
+  
+  
+  func keyboardWillShow(notification: NSNotification) {
+    
+    if let userInfo = notification.userInfo {
+      let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+      let extra = emptyLbl.frame.size.height + 12.0
+      let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height + extra, 0.0)
+      self.scrollView.contentInset = contentInsets
+      self.scrollView.scrollIndicatorInsets = contentInsets
+      
+      print(view.frame.size.height)
+      
+      if view.frame.size.height <= 500.0 {
+        let scrollPoint = CGPointMake(0, emptyLbl.frame.origin.y - keyboardSize.height)
+        scrollView.setContentOffset(scrollPoint, animated: true)
+        hideStatusBar(true)
+      }
+    }
+  }
+  
+  func keyboardWillHide(notification: NSNotification) {
+    
+    let contentInsets = UIEdgeInsetsZero
+    scrollView.contentInset = contentInsets
+    scrollView.scrollIndicatorInsets = contentInsets
+    
+    hideStatusBar(false)
+  }
+  
+  func hideStatusBar(toggle: Bool) {
+    self.statusBarHidden = toggle
+    self.setNeedsStatusBarAppearanceUpdate()
   }
   
   func didTapView() {
