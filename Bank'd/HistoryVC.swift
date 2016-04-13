@@ -7,16 +7,41 @@
 //
 
 import UIKit
+import CoreData
 
 class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var tableView: UITableView!
+  
+  var banks = [Bank]()
+  
+  let formatter = NSDateFormatter()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     tableView.delegate = self
     tableView.dataSource = self
+    
+    //title = "\"The List\""
+    //tableView.registerClass(BankCell.self, forCellReuseIdentifier: "BankCell")
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    let managedContext = appDelegate.managedObjectContext
+    
+    let fetchRequest = NSFetchRequest(entityName: "Bank")
+    
+    do {
+      let results = try managedContext.executeFetchRequest(fetchRequest)
+      banks = results as! [Bank]
+    } catch let error as NSError {
+      print("Could not fetch \(error), \(error.userInfo)")
+    }
   }
 
   override func didReceiveMemoryWarning() {
@@ -29,21 +54,32 @@ class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return UITableViewCell()
-  }
-  
-  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 80.0
+    if let cell = tableView.dequeueReusableCellWithIdentifier("BankCell") as? BankCell {
+      let bank = banks[indexPath.row]
+      
+      formatter.dateStyle = .LongStyle
+      formatter.timeStyle = .MediumStyle
+      
+      if let dateVal = bank.created {
+        cell.timestampLbl.text = formatter.stringFromDate(dateVal)
+      }
+      return cell
+    } else {
+      return UITableViewCell()
+    }
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return banks.count
   }
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
   }
   
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 45.0
+  }
 
   /*
   // MARK: - Navigation

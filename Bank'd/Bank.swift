@@ -1,67 +1,20 @@
 //
-//  Currency.swift
+//  Bank.swift
 //  Bank'd
 //
-//  Created by Mathew Haverty on 4/3/16.
+//  Created by Mathew Haverty on 4/13/16.
 //  Copyright © 2016 Matify. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import CoreData
 
-enum DollarOfType: Int {
-  case One = 1
-  case Two = 2
-  case Five = 5
-  case Ten = 10
-  case Twenty = 20
-  case Fifty = 50
-  case Hundred = 100
-  case Empty = 0
-}
-
-enum CoinOfType: Double {
-  case Penny = 0.01
-  case Nickle = 0.05
-  case Dime = 0.10
-  case Quarter = 0.25
-  case Fifty = 0.50
-  case Empty = 0.0
-}
-
-class Bank {
-  var _dollarBank: [DollarOfType: Int?]!
-  var _coinBank: [CoinOfType: Int?]!
+class Bank: NSManagedObject {
   
-  var dollarBank: [DollarOfType: Int?] {
-    return _dollarBank
-  }
-  
-  var coinBank: [CoinOfType: Int?] {
-    return _coinBank
-  }
-  
-  init(dollarBank: [DollarOfType: Int?], coinBank: [CoinOfType: Int?]) {
-    self._dollarBank = dollarBank
-    self._coinBank = coinBank
-  }
-  
-  func totalAmount() -> Double {
-    var totalBank = 0.0
+  override func awakeFromInsert() {
+    super.awakeFromInsert()
     
-    for (dollarAmount, dollarCount) in dollarBank {
-      if dollarCount != nil {
-        let calculation = dollarAmount.rawValue * dollarCount!
-        totalBank += Double(calculation)
-      }
-    }
-    
-    for (coinAmount, coinCount) in coinBank {
-      if coinCount != nil {
-        let calculation = coinAmount.rawValue * Double(coinCount!)
-        totalBank += calculation
-      }
-    }
-    
-    return totalBank
+    self.created = NSDate()
+    self.modified = NSDate()
   }
 }

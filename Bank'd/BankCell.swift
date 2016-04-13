@@ -9,6 +9,17 @@
 import UIKit
 
 class BankCell: UITableViewCell {
+  
+  @IBOutlet weak var timestampLbl: UILabel!
+  
+  var timeStamp: String {
+    get {
+      guard let text = timestampLbl.text else {
+        return ""
+      }
+      return text
+    }
+  }
 
   override func awakeFromNib() {
     super.awakeFromNib()

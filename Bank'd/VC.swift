@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigationBarDelegate {
   
   // MARK: IBOutlets
   @IBOutlet weak var emptyLbl: UILabel!
@@ -24,9 +25,10 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
   // MARK: Properties, Stored
   let formatter = NSNumberFormatter()
   
-  var dollarBank = [DollarOfType:Int?]()
-  var coinBank = [CoinOfType:Int?]()
-  var bank: Bank?
+  var dollarBank = [DollarOfType:Int]()
+  var coinBank = [CoinOfType:Int]()
+  var staffBank: StaffBank?
+  var banks = [NSManagedObject]()
   
   var statusBarHidden = false
   
@@ -59,7 +61,20 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
   }
   
   override func viewDidLayoutSubviews() {
-    scrollView.contentSize = contentView.frame.size
+    scrollView.contentSize = view.frame.size
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    //let barButton = UIBarButtonItem.appearance()
+    
+    guard let titleFont = UIFont(name: "FiraSans-Regular", size: 18) else {return}
+    guard let buttonFont = UIFont(name: "FiraSans-Regular", size: 15) else {return}
+    
+    navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: titleFont]
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: buttonFont], forState: .Normal)
+    
   }
   
   override func prefersStatusBarHidden() -> Bool {
@@ -71,6 +86,8 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
   }
   
   
+  
+  
   func keyboardWillShow(notification: NSNotification) {
     
     if let userInfo = notification.userInfo {
@@ -79,8 +96,6 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
       let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height + extra, 0.0)
       self.scrollView.contentInset = contentInsets
       self.scrollView.scrollIndicatorInsets = contentInsets
-      
-      print(view.frame.size.height)
       
       if view.frame.size.height <= 500.0 {
         let scrollPoint = CGPointMake(0, emptyLbl.frame.origin.y - keyboardSize.height)
@@ -117,7 +132,7 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
   
   // MARK: IBActions
   
-  @IBAction func onClearPressed(sender: UIButton) {
+  @IBAction func onClearPressed(sender: AnyObject) {
     
     for dollar in dollarFlds {
       dollar.text = ""
@@ -131,8 +146,72 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     didTapView()
   }
   
+  @IBAction func onPlusPressed(sender: UIBarButtonItem) {
+    checkFieldValues()
+    saveTextFields()
+    onClearPressed(self)
+  }
   
   // MARK: Functions, Interface
+  
+  func saveTextFields() {
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    let managedContext = appDelegate.managedObjectContext
+    
+    guard let entity = NSEntityDescription.entityForName("Bank", inManagedObjectContext: managedContext) else {
+      return
+    }
+    
+    let oneBank = NSManagedObject(entity: entity, insertIntoManagedObjectContext: managedContext)
+    
+    guard let staffBank = staffBank else {
+      return
+    }
+    
+    for dollar in staffBank.dollarBank {
+      
+      var keyVal = String()
+      
+      switch dollar.0 {
+      case .Hundred: keyVal = "dollarHundred"
+      case .Fifty: keyVal = "dollarFifty"
+      case .Twenty: keyVal = "dollarTwenty"
+      case .Ten: keyVal = "dollarTen"
+      case .Five: keyVal = "dollarFive"
+      case .Two: keyVal = "dollarTwo"
+      case .One: keyVal = "dollarOne"
+      }
+      
+      oneBank.setValue(dollar.1, forKey: keyVal)
+
+    }
+    
+    for coin in staffBank.coinBank {
+      
+      var keyVal = String()
+      
+      switch coin.0 {
+      case .Fifty: keyVal = "coinFifty"
+      case .Quarter: keyVal = "coinQuarter"
+      case .Dime: keyVal = "coinDime"
+      case .Nickle: keyVal = "coinNickle"
+      case .Penny: keyVal = "coinPenny"
+      }
+      
+      oneBank.setValue(coin.1, forKey: keyVal)
+      
+    }
+    
+    do {
+      try managedContext.save()
+      banks.append(oneBank)
+    } catch let err as NSError {
+      print("Could not save \(err), \(err.userInfo)")
+    }
+    
+  }
 
   func checkFieldValues() {
     
@@ -148,7 +227,7 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
       case "fiveDollar": keyVal = .Five
       case "twoDollar": keyVal = .Two
       case "oneDollar": keyVal = .One
-      default: keyVal = .Empty
+      default: return
       }
       
       if let fieldVal = Int(field.text!) {
@@ -169,7 +248,7 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
       case "tenCent": keyVal = .Dime
       case "fiveCent": keyVal = .Nickle
       case "oneCent": keyVal = .Penny
-      default: keyVal = .Empty
+      default: return
       }
       
       if let fieldVal = Int(field.text!) {
@@ -180,7 +259,7 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
       
     }
     
-    bank = Bank(dollarBank: dollarBank, coinBank: coinBank)
+    staffBank = StaffBank(dollarBank: dollarBank, coinBank: coinBank)
   }
   
   func changeLabel() {
@@ -188,12 +267,12 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     formatter.numberStyle = .CurrencyStyle
     
-    if bank?.totalAmount() > 0.0 {
+    if staffBank?.totalAmount() > 0.0 {
       emptyLbl.hidden = true
       bankLbl.hidden = false
       bankAmtLbl.hidden = false
       
-      if let stringAmount = bank?.totalAmount(), let printAmount = formatter.stringFromNumber(stringAmount) {
+      if let stringAmount = staffBank?.totalAmount(), let printAmount = formatter.stringFromNumber(stringAmount) {
         bankAmtLbl.text = "\(printAmount)"
       }
     } else {
