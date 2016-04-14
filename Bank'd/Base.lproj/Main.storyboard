@@ -113,31 +113,31 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-G6-0oO">
-                                                        <rect key="frame" x="85" y="0.0" width="74.5" height="25"/>
+                                                        <rect key="frame" x="85" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbU-QV-G4r">
-                                                        <rect key="frame" x="169.5" y="0.0" width="75" height="25"/>
+                                                        <rect key="frame" x="170" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkH-zY-mIc">
-                                                        <rect key="frame" x="254.5" y="0.0" width="75" height="25"/>
+                                                        <rect key="frame" x="255" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evm-PA-ALg">
-                                                        <rect key="frame" x="339.5" y="0.0" width="75" height="25"/>
+                                                        <rect key="frame" x="340" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOb-aH-Pro">
-                                                        <rect key="frame" x="424.5" y="0.0" width="74.5" height="25"/>
+                                                        <rect key="frame" x="425" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -168,7 +168,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yLf-fO-k0B" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="85" y="0.0" width="74.5" height="36"/>
+                                                        <rect key="frame" x="85" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -176,7 +176,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wvw-SX-5p3" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="169.5" y="0.0" width="75" height="36"/>
+                                                        <rect key="frame" x="170" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -184,7 +184,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-qK-7vg" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="254.5" y="0.0" width="75" height="36"/>
+                                                        <rect key="frame" x="255" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -192,7 +192,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M82-Gr-CnH" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="339.5" y="0.0" width="75" height="36"/>
+                                                        <rect key="frame" x="340" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -200,7 +200,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MHr-vP-acK" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="424.5" y="0.0" width="74.5" height="36"/>
+                                                        <rect key="frame" x="425" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -252,19 +252,19 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25¢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJI-hR-0xp">
-                                                        <rect key="frame" x="122" y="0.0" width="96.5" height="25"/>
+                                                        <rect key="frame" x="122" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10¢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T79-UQ-y9N">
-                                                        <rect key="frame" x="243.5" y="0.0" width="97" height="25"/>
+                                                        <rect key="frame" x="244" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5¢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PD-sT-4oG">
-                                                        <rect key="frame" x="365.5" y="0.0" width="96.5" height="25"/>
+                                                        <rect key="frame" x="366" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -298,7 +298,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ek2-jP-lhk" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="122" y="0.0" width="96.5" height="36"/>
+                                                        <rect key="frame" x="122" y="0.0" width="97" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -306,7 +306,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-yn-bMR" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="243.5" y="0.0" width="97" height="36"/>
+                                                        <rect key="frame" x="244" y="0.0" width="97" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -314,7 +314,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yds-vx-XXc" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="365.5" y="0.0" width="96.5" height="36"/>
+                                                        <rect key="frame" x="366" y="0.0" width="97" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -597,31 +597,31 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KN-hb-bO6">
-                                                        <rect key="frame" x="85" y="0.0" width="74.5" height="25"/>
+                                                        <rect key="frame" x="85" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEt-9n-Eqv">
-                                                        <rect key="frame" x="169" y="0.0" width="75" height="25"/>
+                                                        <rect key="frame" x="170" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPl-Rn-aAI">
-                                                        <rect key="frame" x="254" y="0.0" width="75" height="25"/>
+                                                        <rect key="frame" x="255" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIA-0M-lbL">
-                                                        <rect key="frame" x="339" y="0.0" width="75" height="25"/>
+                                                        <rect key="frame" x="340" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXN-1X-oQP">
-                                                        <rect key="frame" x="424" y="0.0" width="74.5" height="25"/>
+                                                        <rect key="frame" x="425" y="0.0" width="75" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -652,7 +652,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D8c-cU-eEl" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="85" y="0.0" width="74.5" height="36"/>
+                                                        <rect key="frame" x="85" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -660,7 +660,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvN-v6-0i9" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="169" y="0.0" width="75" height="36"/>
+                                                        <rect key="frame" x="170" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -668,7 +668,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-0t-lqJ" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="254" y="0.0" width="75" height="36"/>
+                                                        <rect key="frame" x="255" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -676,7 +676,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7o-ZU-Rz9" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="339" y="0.0" width="75" height="36"/>
+                                                        <rect key="frame" x="340" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -684,7 +684,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6jz-c5-uHB" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="424" y="0.0" width="74.5" height="36"/>
+                                                        <rect key="frame" x="425" y="0.0" width="75" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -736,19 +736,19 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25¢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb2-oN-MlS">
-                                                        <rect key="frame" x="122" y="0.0" width="96.5" height="25"/>
+                                                        <rect key="frame" x="122" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10¢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X01-SG-VV8">
-                                                        <rect key="frame" x="243" y="0.0" width="97" height="25"/>
+                                                        <rect key="frame" x="244" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5¢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW8-52-v92">
-                                                        <rect key="frame" x="365" y="0.0" width="96.5" height="25"/>
+                                                        <rect key="frame" x="366" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-LightItalic" family="Fira Sans" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -782,7 +782,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGk-Q4-xBA" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="122" y="0.0" width="96.5" height="36"/>
+                                                        <rect key="frame" x="122" y="0.0" width="97" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -790,7 +790,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-bM-8r1" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="243" y="0.0" width="97" height="36"/>
+                                                        <rect key="frame" x="244" y="0.0" width="97" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -798,7 +798,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-o2-khz" customClass="CurrencyField" customModule="Bank_d" customModuleProvider="target">
-                                                        <rect key="frame" x="365" y="0.0" width="96.5" height="36"/>
+                                                        <rect key="frame" x="366" y="0.0" width="97" height="36"/>
                                                         <fontDescription key="fontDescription" name="FiraSans-Regular" family="Fira Sans" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -892,9 +892,9 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="iAA-1w-FsF"/>
                                                 <exclude reference="1cc-mU-9Vi"/>
                                                 <exclude reference="HgB-sL-dcx"/>
+                                                <exclude reference="iAA-1w-FsF"/>
                                                 <exclude reference="Ux7-4P-2QH"/>
                                             </mask>
                                         </variation>

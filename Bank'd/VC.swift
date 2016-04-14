@@ -41,10 +41,12 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
     
     for dollar in dollarFlds {
       dollar.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
+      dollar.delegate = self
     }
     
     for cent in centFlds {
       cent.addTarget(self, action: #selector(VC.changeLabel), forControlEvents: .EditingChanged)
+      cent.delegate = self
     }
     
     let tapRecognizer = UITapGestureRecognizer()
@@ -86,8 +88,23 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
     return UIStatusBarAnimation.Slide
   }
   
+  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    let inverseSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
+    
+    let components = string.componentsSeparatedByCharactersInSet(inverseSet)
+    
+    let filtered = components.joinWithSeparator("")
+    
+    return string == filtered
+  }
   
-  
+  override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+    if action == #selector(NSObject.paste(_:)) {
+      return false
+    }
+    
+    return super.canPerformAction(action, withSender: sender)
+  }
   
   func keyboardWillShow(notification: NSNotification) {
     
