@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HistoryVC: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
   var banks = [Bank]()
+  var sentBank: StaffBank?
   
   let formatter = NSDateFormatter()
   let numFormatter = NSNumberFormatter()
@@ -53,9 +54,34 @@ class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if(segue.identifier == "showRowSegue") {
+      let nextVC = (segue.destinationViewController as! VC)
+      let cell = sender as! BankCell
+      let selectedRow = tableView.indexPathForCell(cell)!.row
+      nextVC.isNewRecord = false
+      nextVC.workingBank = banks[selectedRow]
+    }
+  }
+
+}
+
+
+extension HistoryVC: UITableViewDelegate {
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 45.0
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let selectedRow = banks[indexPath.row]
+    sentBank = selectedRow.staffBank
+  }
+}
+
+
+extension HistoryVC: UITableViewDataSource {
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
@@ -85,25 +111,22 @@ class HistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    
-  }
-  
-  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 45.0
-  }
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
-  
-  @IBAction func backBtnPressed(sender: UIButton) {
-    dismissViewControllerAnimated(true, completion: nil)
+    switch editingStyle {
+    case .Delete:
+      let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+      let context = appDelegate.managedObjectContext
+      context.deleteObject(banks[indexPath.row] as NSManagedObject)
+      banks.removeAtIndex(indexPath.row)
+      
+      do {
+        try context.save()
+      } catch let err as NSError {
+        print("This error: \(err), \(err.userInfo)")
+      }
+      
+      self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    default: return
+    }
   }
 
 }

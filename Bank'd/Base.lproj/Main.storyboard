@@ -478,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPH-8F-4uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="-165"/>
+            <point key="canvasLocation" x="1762" y="13"/>
         </scene>
         <!--History List-->
         <scene sceneID="lHW-Lv-cta">
@@ -534,7 +534,7 @@
                                         <connections>
                                             <outlet property="amountLbl" destination="WUe-0g-MRw" id="yGN-zm-vf1"/>
                                             <outlet property="timestampLbl" destination="lFi-8c-uXk" id="MV9-Fc-JnT"/>
-                                            <segue destination="pMi-T0-qrT" kind="show" id="d2r-N9-9Ln"/>
+                                            <segue destination="pMi-T0-qrT" kind="show" identifier="showRowSegue" id="d2r-N9-9Ln"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -558,12 +558,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mZ-1T-B9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="-335"/>
+            <point key="canvasLocation" x="1767" y="-747"/>
         </scene>
         <!--Edit Bank-->
         <scene sceneID="HT0-Ve-LqY">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="pMi-T0-qrT" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="pMi-T0-qrT" customClass="VC" customModule="Bank_d" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S4I-ww-ff0"/>
                         <viewControllerLayoutGuide type="bottom" id="Oqb-i0-TzO"/>
@@ -919,12 +919,35 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Bank" id="3q2-nZ-Qcr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WCl-d5-xXQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WCl-d5-xXQ">
+                            <connections>
+                                <action selector="onSavePressed:" destination="pMi-T0-qrT" id="svX-KS-gEV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bankAmtLbl" destination="1uj-hK-Dvf" id="vUc-p6-JAe"/>
+                        <outlet property="bankLbl" destination="2l8-Fa-jjz" id="EkL-zo-2je"/>
+                        <outlet property="contentView" destination="Mcf-Mx-h0k" id="wTJ-5t-ooa"/>
+                        <outlet property="emptyLbl" destination="QCE-Mg-6mU" id="cOF-qz-ZLH"/>
+                        <outlet property="scrollView" destination="oNx-s2-VZc" id="1dl-Tf-7r6"/>
+                        <outletCollection property="dollarFlds" destination="lsx-Uc-XoE" collectionClass="NSMutableArray" id="XNQ-uf-1tG"/>
+                        <outletCollection property="dollarFlds" destination="D8c-cU-eEl" collectionClass="NSMutableArray" id="2Lb-vJ-1Bi"/>
+                        <outletCollection property="dollarFlds" destination="hvN-v6-0i9" collectionClass="NSMutableArray" id="efR-Ta-vbH"/>
+                        <outletCollection property="dollarFlds" destination="nGg-0t-lqJ" collectionClass="NSMutableArray" id="kFC-gK-jde"/>
+                        <outletCollection property="dollarFlds" destination="c7o-ZU-Rz9" collectionClass="NSMutableArray" id="gVG-fn-7e5"/>
+                        <outletCollection property="dollarFlds" destination="6jz-c5-uHB" collectionClass="NSMutableArray" id="cVv-vj-pZE"/>
+                        <outletCollection property="dollarFlds" destination="6VM-WX-rtB" collectionClass="NSMutableArray" id="9FQ-Y0-t1B"/>
+                        <outletCollection property="centFlds" destination="WHs-ZL-zkk" collectionClass="NSMutableArray" id="RIP-g4-BBG"/>
+                        <outletCollection property="centFlds" destination="CGk-Q4-xBA" collectionClass="NSMutableArray" id="94c-zf-zli"/>
+                        <outletCollection property="centFlds" destination="XsB-bM-8r1" collectionClass="NSMutableArray" id="ygd-d7-ulz"/>
+                        <outletCollection property="centFlds" destination="Mhx-o2-khz" collectionClass="NSMutableArray" id="8GS-qo-6Ps"/>
+                        <outletCollection property="centFlds" destination="osE-cF-7w2" collectionClass="NSMutableArray" id="R6g-1H-BRn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mq3-Yh-7qH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486" y="-335"/>
+            <point key="canvasLocation" x="2462" y="-747"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VQk-eX-KXX">
@@ -949,7 +972,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mka-cH-xEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="-165"/>
+            <point key="canvasLocation" x="946" y="13"/>
         </scene>
     </scenes>
 </document>

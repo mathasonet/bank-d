@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigationBarDelegate {
+class VC: UIViewController {
   
   // MARK: IBOutlets
   @IBOutlet weak var emptyLbl: UILabel!
@@ -28,11 +28,11 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
   var dollarBank = [DollarOfType:Int]()
   var coinBank = [CoinOfType:Int]()
   var staffBank: StaffBank?
+  var workingBank: NSManagedObject?
   var banks = [NSManagedObject]()
   
+  var isNewRecord = true
   var statusBarHidden = false
-  
-  // MARK: Properties, Computed
   
   
   // MARK: Functions, Setup
@@ -58,8 +58,14 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VC.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     
     scrollView.delegate = self
-    
     scrollView.keyboardDismissMode = .Interactive
+    
+    guard let titleFont = UIFont(name: "FiraSans-Regular", size: 18) else {return}
+    guard let buttonFont = UIFont(name: "FiraSans-Regular", size: 15) else {return}
+    
+    navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: titleFont]
+    //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: titleFont]
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: buttonFont], forState: .Normal)
   }
   
   override func viewDidLayoutSubviews() {
@@ -69,14 +75,14 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
-    //let barButton = UIBarButtonItem.appearance()
-    
-    guard let titleFont = UIFont(name: "FiraSans-Regular", size: 18) else {return}
-    guard let buttonFont = UIFont(name: "FiraSans-Regular", size: 15) else {return}
-    
-    navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: titleFont]
-    //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: titleFont]
-    UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: buttonFont], forState: .Normal)
+    if isNewRecord == false {
+
+      if let useBank = workingBank {
+        propogateTextFields(useBank)
+        checkFieldValues()
+        changeLabel()
+      }
+    }
     
   }
   
@@ -86,24 +92,6 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
   
   override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
     return UIStatusBarAnimation.Slide
-  }
-  
-  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-    let inverseSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
-    
-    let components = string.componentsSeparatedByCharactersInSet(inverseSet)
-    
-    let filtered = components.joinWithSeparator("")
-    
-    return string == filtered
-  }
-  
-  override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
-    if action == #selector(NSObject.paste(_:)) {
-      return false
-    }
-    
-    return super.canPerformAction(action, withSender: sender)
   }
   
   func keyboardWillShow(notification: NSNotification) {
@@ -170,7 +158,52 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
     onClearPressed(self)
   }
   
+  @IBAction func onSavePressed(sender: UIBarButtonItem) {
+    
+    navigationController?.popViewControllerAnimated(true)
+  }
+  
+  
   // MARK: Functions, Interface
+  
+  func propogateTextFields(fromBank: NSManagedObject) {
+    for dollar in dollarFlds {
+      
+      var keyVal = String()
+      
+      switch dollar.fieldID {
+      case "hundredDollar": keyVal = "dollarHundred"
+      case "fiftyDollar": keyVal = "dollarFifty"
+      case "twentyDollar": keyVal = "dollarTwenty"
+      case "tenDollar": keyVal = "dollarTen"
+      case "fiveDollar": keyVal = "dollarFive"
+      case "twoDollar": keyVal = "dollarTwo"
+      case "oneDollar": keyVal = "dollarOne"
+      default: return
+      }
+      
+      
+      guard let value = fromBank.valueForKey(keyVal) else { return }
+      dollar.text = String(value)
+    }
+    
+    for coin in centFlds {
+      
+      var keyVal = String()
+      
+      switch coin.fieldID {
+      case "fiftyCent": keyVal = "coinFifty"
+      case "quarterCent": keyVal = "coinQuarter"
+      case "tenCent": keyVal = "coinDime"
+      case "fiveCent": keyVal = "coinNickle"
+      case "oneCent": keyVal = "coinPenny"
+      default: return
+      }
+      
+      guard let value = fromBank.valueForKey(keyVal) else { return }
+      coin.text = String(value)
+    }
+  }
   
   func saveTextFields() {
     
@@ -310,4 +343,32 @@ class VC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UINavigat
       bankAmtLbl.hidden = true
     }
   }
+}
+
+// MARK:- Protocol Conformance
+// MARK: TextFieldDelegate
+extension VC: UITextFieldDelegate {
+  
+  func textField(textField: UITextField,
+                 shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    
+    let inverseSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
+    
+    let components = string.componentsSeparatedByCharactersInSet(inverseSet)
+    
+    let filtered = components.joinWithSeparator("")
+    
+    return string == filtered
+    
+  }
+}
+
+// MARK: ScrollViewDelegate
+extension VC: UIScrollViewDelegate {
+  
+}
+
+// MARK: NavigationBarDelegate
+extension VC: UINavigationBarDelegate {
+  
 }
