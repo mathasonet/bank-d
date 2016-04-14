@@ -52,7 +52,6 @@ class VC: UIViewController {
     let tapRecognizer = UITapGestureRecognizer()
     tapRecognizer.addTarget(self, action: #selector(VC.didTapView))
     self.view.addGestureRecognizer(tapRecognizer)
-    _ = UIColor(red:0.768627, green:0.862745, blue:0.945098, alpha:1.0)
     
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VC.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VC.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
@@ -64,8 +63,11 @@ class VC: UIViewController {
     guard let buttonFont = UIFont(name: "FiraSans-Regular", size: 15) else {return}
     
     navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: titleFont]
-    //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: titleFont]
     UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: buttonFont], forState: .Normal)
+    self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: buttonFont], forState: .Normal)
+    self.navigationItem.rightBarButtonItems?.forEach({ (Element) in
+      Element.setTitleTextAttributes([NSFontAttributeName: buttonFont], forState: .Normal)
+    })
   }
   
   override func viewDidLayoutSubviews() {

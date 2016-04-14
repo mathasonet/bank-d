@@ -435,7 +435,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bank'd" id="rTf-J9-BKa">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="QYk-Gd-8Fg" userLabel="Clear">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="QYk-Gd-8Fg" userLabel="Clear">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onClearPressed:" destination="Yqd-mZ-tx2" id="vQy-eb-Bud"/>
