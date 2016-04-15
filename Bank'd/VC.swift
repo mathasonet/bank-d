@@ -222,7 +222,7 @@ class VC: UIViewController {
     guard let staffBank = staffBank else {
       return
     }
-    
+    // FIXME: This is still letting empty records get saved
     if staffBank.isNotEmpty() {
       
       for dollar in staffBank.dollarBank {
